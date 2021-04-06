@@ -1,0 +1,67 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+.tooltip-able {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-able .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    background: inherit;
+  }
+  &.tooltip-left{
+    &::before{
+      right: -3px;
+    }
+    right: calc(100% + 10px);
+  }
+  &.tooltip-top{
+    bottom: calc(100% + 10px);
+    &::before{
+      bottom: -3px;
+    }
+  }
+  &.tooltip-right{
+    left: calc(100% + 10px);
+    &::before{
+      left: -3px;
+    }
+  }
+  &.tooltip-bottom{
+    top: calc(100% + 10px);
+    &::before{
+      top: -3px;
+    }
+  }
+
+}
+
+.radius-top-none{
+ border-top-right-radius: 0;
+ border-top-left-radius: 0;
+}
+
+.tooltip-able:hover .tooltip-text {
+  visibility: visible;
+}
+.clickable{
+  cursor: pointer;
+}
